@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
-
+import { SomthingDirective } from './somthing.directive'
 const appRoutes: Routes = [
   { path: '', component: UsersComponent },
 ];
@@ -12,13 +12,16 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent
+    UsersComponent,
+    SomthingDirective
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
-      appRoutes
+      appRoutes,
+      { enableTracing: false },// <-- debugging purposes only
     )
+
 
   ],
   providers: [],
